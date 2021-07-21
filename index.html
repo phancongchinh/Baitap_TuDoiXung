@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra từ đối xứng</title>
+</head>
+<body>
+<script>
+    function getTheWord() {
+        let inputWord = "";
+        do {
+        inputWord = prompt("Enter a word!");
+        } while (inputWord === "")
+        return inputWord;
+    }
+
+    function isPalindrome(str) {
+        let first = 0;
+        let last = str.length - 1 ;
+        while (first < last) {
+            if (str[first] !== str[last]) {
+                return false;
+            }
+            first++;
+            last--;
+        }
+        return true;
+    }
+
+    function showResult () {
+        let result = isPalindrome(getTheWord());
+        switch (result) {
+            case true:
+                alert("The word is palindrome!");
+                break;
+            case false:
+                alert("The word is NOT palindrome!")
+                break;
+        }
+    }
+
+    showResult();
+</script>
+</body>
+</html>
